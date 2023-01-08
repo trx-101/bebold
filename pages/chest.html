@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-       
+  <script src="/js/code.js"></script>
     </head>
     <body>
         <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-primary main-navigation" id="navbar">
@@ -147,33 +147,36 @@
         <script src="../js/script.js"></script>
         <script>
              
-            function pages(clicked){                
+            function pages(clicked){        
+                        
                 window.location.href=""+clicked.toLowerCase()+".html";
             }
            
         </script>
         <script>
-        
-            a = [
-            '../img/c1.gif',
-            '../img/c2.gif',
-            '../img/c3.gif',
-            '../img/c4.gif',
-            
-            '../img/c5.gif',
-            
-            ];
+       
+       a = [
+    '../img/c1.gif',
+    '../img/c2.gif',
+    '../img/c3.gif',
+    '../img/c4.gif',
+    '../img/c5.gif',
+    '../img/c6.gif',
+    '../img/c7.gif',
+    '../img/cc7.gif',
+    
+    ];
             var x = 0;
             
             for (var i = 0; x < a.length; i++) {
                 var append = "<div class=''>";
-                for (var j = 0; j <= 6 && x < a.length; j++) {
+                for (var j = 0; j< a.length; j++) {
                     append += `
                     <div class='col-md-4'>
                     <div class="thumbnail">
                
                 <img class="" style="width:100%" src=` + a[x++] + `>
-                <div id ="div`+j+`"></div>
+                <div id ="div`+j+`" class=""></div>
             </div>
             
             </div>
@@ -182,7 +185,14 @@
                 append += '</div>';
                 appender(append);
             }
-            
+            function Text(len){
+                for (var k = 0; k < len; k++) {
+                    $("#div"+k).html('<p style="text-align: center;">10 X 3 or 6 X 4</p><p style="text-align: center;">3 Sets 10 repeatation or 4 sets 6 repeatation</p>');
+                }
+            }
+           
+           Text(6);
+            $("#div6, #div7").html('<p style="text-align: center;">12 X 2</p><p style="text-align: center;">2 Sets 12 repeatation</p>');
             // Function to append the data
             function appender(x) {
                 $('#gallery').html(function(i, original_html) {
@@ -198,6 +208,7 @@
                 $('#myModal').modal();
             });
         </script>
-        
+         
+       
     </body>
 </html>
