@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      
+  <script src="/js/code.js"></script>
     </head>
     <body>
         <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-primary main-navigation" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="#">GYM GURU</a>
+                <a class="navbar-brand" href="../index.html">GYM GURU</a>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -93,6 +93,7 @@
                 </div>  
             </section>
         </main>
+
         <footer class="footer-section">
             <div class="container">
                 <div class="footer-cta pt-3 pb-3">
@@ -140,47 +141,59 @@
                 </div>
             </div>
         </footer>
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="../js/script.js"></script>
         <script>
              
-            function pages(clicked){                
+            function pages(clicked){        
+                        
                 window.location.href=""+clicked.toLowerCase()+".html";
             }
            
         </script>
         <script>
-        
-            a = [
-            '../img/a.gif',
-            '../img/b.gif',
-            '../img/c.gif',
-            '../img/Barbell-Incline-Bench-Press_Chest_360.gif',
-            
-            '../img/Dumbbell-Fly.gif',
-            '../img/Incline-dumbbell-Fly.gif',
-            '../img/Lever-Seated-Fly_Chest_360.gif'
-            ];
+       
+       a = [
+    '../img/b1.gif',
+    '../img/b2.gif',
+    '../img/b3.gif',
+    '../img/b4.gif',
+    '../img/b5.gif',
+    '../img/b6.gif',
+    '../img/b7.gif',
+    '../img/b8.gif',
+    '../img/b9.gif',
+    
+    ];
             var x = 0;
             
             for (var i = 0; x < a.length; i++) {
                 var append = "<div class=''>";
-                for (var j = 0; j < 6 && x < a.length; j++) {
+                for (var j = 0; j< a.length; j++) {
                     append += `
                     <div class='col-md-4'>
                     <div class="thumbnail">
                
                 <img class="" style="width:100%" src=` + a[x++] + `>
-               
+                <div id ="div`+j+`" class=""></div>
             </div>
+            
             </div>
             `;
                 }
                 append += '</div>';
                 appender(append);
             }
+            function Text(len){
+                for (var k = 0; k < len; k++) {
+                    $("#div"+k).html('<p style="text-align: center;">10 X 3 or 6 X 4</p><p style="text-align: center;">3 Sets 10 repeatation or 4 sets 6 repeatation</p>');
+                }
+            }
+           
+           Text(9);
             
-            // Function to append the data
             function appender(x) {
                 $('#gallery').html(function(i, original_html) {
                     return (original_html + x);
@@ -195,6 +208,7 @@
                 $('#myModal').modal();
             });
         </script>
-        
+         
+       
     </body>
 </html>
