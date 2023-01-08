@@ -16,7 +16,7 @@
     <body>
         <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-primary main-navigation" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="#">GYM GURU</a>
+                <a class="navbar-brand" href="../index.html">GYM GURU</a>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -166,35 +166,35 @@
             
             for (var i = 0; x < a.length; i++) {
                 var append = "<div class=''>";
-                for (var j = 0; j < 6 && x < a.length; j++) {
+                for (var j = 0; j< a.length; j++) {
                     append += `
                     <div class='col-md-4'>
                     <div class="thumbnail">
                
                 <img class="" style="width:100%" src=` + a[x++] + `>
-               
+                <div id ="div`+j+`" class=""></div>
             </div>
+            
             </div>
             `;
                 }
                 append += '</div>';
                 appender(append);
             }
+            function Text(len){
+                for (var k = 0; k < len; k++) {
+                    $("#div"+k).html('<p style="text-align: center;">10 X 3 or 6 X 4</p><p style="text-align: center;">3 Sets 10 repeatation or 4 sets 6 repeatation</p>');
+                }
+            }
+           
+           Text(8);
             
-            // Function to append the data
             function appender(x) {
                 $('#gallery').html(function(i, original_html) {
                     return (original_html + x);
                 });
             }
             
-            // For Image Modal
-            $(document).on('click', 'img', function() {
-                imgAddr = $(this).attr('src');
-                data = "<center><img src=" + imgAddr + " width='100%'>";
-                $('#myModal').find('.modal-body').html(data);
-                $('#myModal').modal();
-            });
         </script>
         
     </body>
